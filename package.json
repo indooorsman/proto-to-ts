@@ -1,0 +1,23 @@
+{
+  "name": "proto-to-ts",
+  "version": "1.0.0",
+  "description": "A simple tool to convert *.proto to *.d.ts",
+  "main": "index.js",
+  "bin": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indooorsman/proto-to-ts.git"
+  },
+  "author": "indooorsman@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indooorsman/proto-to-ts/issues"
+  },
+  "homepage": "https://github.com/indooorsman/proto-to-ts#readme"
+}
