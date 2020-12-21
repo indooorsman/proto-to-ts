@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/indooorsman/proto-to-ts/issues"
   },
-  "homepage": "https://github.com/indooorsman/proto-to-ts#readme"
+  "homepage": "https://github.com/indooorsman/proto-to-ts#readme",
+  "dependencies": {
+    "proto-parser": "0.0.5"
+  }
 }

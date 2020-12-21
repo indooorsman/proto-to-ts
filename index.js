@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const parse = require('./lib/convertor.js');
+const { parse } = require('proto-parser');
 const fs = require('fs');
 const path = require('path');
 const args = process.argv;
@@ -13,6 +13,6 @@ if (flagIndex === -1) {
   const filePathIndex = flagIndex + 1;
   const filePath = args[filePathIndex];
   fs.readFile(path.resolve(__dirname, filePath), { encoding: 'utf8' }, (e, data) => {
-    console.log(parse(data));
+    console.log(JSON.stringify(parse(data, {weakResolve: true}), null, '\t'));
   });
 }
