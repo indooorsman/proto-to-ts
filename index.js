@@ -4,15 +4,29 @@ const fs = require('fs');
 const path = require('path');
 const args = process.argv;
 
-const flag = '-f';
+const sourceFlag = '-f';
+const targetFlag = '-o';
 
-const flagIndex = args.indexOf(flag);
-if (flagIndex === -1) {
-  console.log('Usage: proto-to-ts -f /proto/file/path/x.proto > /output/path/of/ts/file/x.ts');
+const sourceFlagIndex = args.indexOf(sourceFlag);
+const targetFlagIndex = args.indexOf(targetFlag);
+if (sourceFlagIndex === -1) {
+  console.log('Usage: proto-to-ts -f /proto/file/path/x.proto -o /output/path/of/ts/file/x.ts');
 } else {
-  const filePathIndex = flagIndex + 1;
+  const filePathIndex = sourceFlagIndex + 1;
   const filePath = args[filePathIndex];
   fs.readFile(path.resolve(__dirname, filePath), { encoding: 'utf8' }, (e, data) => {
-    console.log(parse(data));
+    const ts = parse(data);
+    if (targetFlagIndex === -1) {
+      console.log(ts);
+    } else {
+      const outputFilePath = args[targetFlagIndex + 1];
+      fs.writeFile(path.resolve(__dirname, outputFilePath), ts, { encoding: 'utf8' }, (e) => {
+        if (e) {
+          console.error(e);
+        } else {
+          console.log('Done!');
+        }
+      });
+    }
   });
 }
