@@ -10,7 +10,7 @@ const targetFlag = '-o';
 const sourceFlagIndex = args.indexOf(sourceFlag);
 const targetFlagIndex = args.indexOf(targetFlag);
 if (sourceFlagIndex === -1) {
-  console.log('Usage: proto-to-ts -f /proto/file/path/x.proto -o /output/path/of/ts/file/x.ts');
+  console.log('Usage: pb2ts -f /proto/file/path/x.proto -o /output/path/of/ts/file/x.ts');
 } else {
   const filePathIndex = sourceFlagIndex + 1;
   const filePath = args[filePathIndex];
