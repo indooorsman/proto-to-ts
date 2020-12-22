@@ -1,8 +1,8 @@
 {
   "name": "@indooorsmen/pb2ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": ["proto", "ts", "typescript", "protobuf"],
-  "description": "Proto to TS, a simple tool to convert *.proto to *.d.ts",
+  "description": "Proto to TS, a simple tool to convert x.proto to x.ts",
   "main": "index.js",
   "bin": {
     "pb2ts": "./index.js"

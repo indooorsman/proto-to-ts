@@ -1,6 +1,6 @@
-# proto-to-ts
+# pb2ts
 
-A simple tool to convert *.proto to *.d.ts
+A simple tool to convert x.proto to x.ts
 
 ## Usage
 
