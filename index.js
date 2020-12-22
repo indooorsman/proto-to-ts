@@ -3,6 +3,7 @@ const parse = require('./lib/convertor.js');
 const fs = require('fs');
 const path = require('path');
 const args = process.argv;
+const cwd = process.cwd();
 
 const sourceFlag = '-f';
 const targetFlag = '-o';
@@ -14,13 +15,19 @@ if (sourceFlagIndex === -1) {
 } else {
   const filePathIndex = sourceFlagIndex + 1;
   const filePath = args[filePathIndex];
-  fs.readFile(path.resolve(__dirname, filePath), { encoding: 'utf8' }, (e, data) => {
+  console.log('Source proto is', path.resolve(cwd, filePath));
+  fs.readFile(path.resolve(cwd, filePath), { encoding: 'utf8' }, (e, data) => {
+    if (e) {
+      return console.error(e);
+    }
     const ts = parse(data);
     if (targetFlagIndex === -1) {
+      console.log('\nResult is:\n');
       console.log(ts);
     } else {
       const outputFilePath = args[targetFlagIndex + 1];
-      fs.writeFile(path.resolve(__dirname, outputFilePath), ts, { encoding: 'utf8' }, (e) => {
+      console.log('Output ts is', path.resolve(cwd, outputFilePath));
+      fs.writeFile(path.resolve(cwd, outputFilePath), ts, { encoding: 'utf8' }, (e) => {
         if (e) {
           console.error(e);
         } else {
