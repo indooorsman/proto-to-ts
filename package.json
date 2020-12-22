@@ -1,5 +1,5 @@
 {
-  "name": "pb2ts",
+  "name": "@indooorsmen/pb2ts",
   "version": "1.0.1",
   "keywords": ["proto", "ts", "typescript", "protobuf"],
   "description": "Proto to TS, a simple tool to convert *.proto to *.d.ts",

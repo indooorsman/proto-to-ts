@@ -5,7 +5,7 @@ A simple tool to convert *.proto to *.d.ts
 ## Usage
 
 ```shell
-npm install -g pb2ts
+npm install -g  @indooorsmen/pb2ts
 ```
 
 ```shell
