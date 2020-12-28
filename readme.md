@@ -5,7 +5,7 @@ A simple tool to convert x.proto to x.ts
 ## Usage
 
 ```shell
-npm install -g  @indooorsmen/pb2ts
+npm install -g  @indooorsmen/pb2ts@latest
 ```
 
 ```shell
